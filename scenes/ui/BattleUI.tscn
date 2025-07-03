@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/BattleUI.gd" id=1]
+
+[node name="BattleUI" type="Control"]
+script = ExtResource(1)
+character_info_container_player = NodePath("CharacterInfoPlayer")
+character_info_container_enemy = NodePath("CharacterInfoEnemy")
+player_action_panel = NodePath("PlayerActionPanel")
+skill_buttons_container = NodePath("PlayerActionPanel/SkillButtonsContainer")
+target_selection_panel = NodePath("TargetSelectionPanel")
+battle_log_scroll = NodePath("BattleLogScroll")
+battle_log_label = NodePath("BattleLogScroll/LogLabel")
+current_turn_label = NodePath("CurrentTurnLabel")
+battle_result_label = NodePath("BattleResultLabel")
+
+[node name="CharacterInfoPlayer" type="VBoxContainer" parent="."]
+
+[node name="CharacterInfoEnemy" type="VBoxContainer" parent="."]
+
+[node name="PlayerActionPanel" type="PanelContainer" parent="."]
+
+[node name="SkillButtonsContainer" type="HBoxContainer" parent="PlayerActionPanel"]
+
+[node name="TargetSelectionPanel" type="PanelContainer" parent="."]
+
+[node name="BattleLogScroll" type="ScrollContainer" parent="."]
+
+[node name="LogLabel" type="Label" parent="BattleLogScroll"]
+
+[node name="CurrentTurnLabel" type="Label" parent="."]
+
+[node name="BattleResultLabel" type="Label" parent="."]
