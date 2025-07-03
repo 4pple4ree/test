@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/managers/BattleManager.gd" id=1]
+[ext_resource type="Script" path="res://scripts/ui/BattleUI.gd" id=2]
+
+[node name="Battle" type="Node2D"]
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource(1)
+battle_ui_path = NodePath("BattleUI")
+player_spawn_points_parent_path = NodePath("PlayerSpawns")
+enemy_spawn_points_parent_path = NodePath("EnemySpawns")
+
+[node name="PlayerSpawns" type="Node2D" parent="BattleManager"]
+
+[node name="EnemySpawns" type="Node2D" parent="BattleManager"]
+
+[node name="BattleUI" type="Control" parent="BattleManager"]
+script = ExtResource(2)
