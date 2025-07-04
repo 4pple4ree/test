@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/ui/GachaScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/placeholder_banner.png" type="Texture2D" id=2]
+
+[node name="GachaScreen" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 800.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 6.0
+text = "Gacha / Warp"
+
+[node name="CloseButton" type="Button" parent="."]
+anchor_right = 1.0
+margin_right = -10.0
+margin_top = 6.0
+text = "X"
+
+[node name="BannerList" type="ItemList" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.25
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 40.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Animation" type="CenterContainer" parent="."]
+anchor_left = 0.25
+anchor_top = 0.0
+anchor_right = 0.75
+anchor_bottom = 0.7
+margin_left = 10.0
+margin_top = 40.0
+margin_right = -10.0
+margin_bottom = -60.0
+
+[node name="Texture" type="TextureRect" parent="Animation"]
+expand_mode = 2
+stretch_mode = 2
+texture = ExtResource( 2 )
+
+[node name="Controls" type="HBoxContainer" parent="."]
+anchor_left = 0.25
+anchor_top = 0.7
+anchor_right = 0.75
+anchor_bottom = 0.8
+margin_left = 10.0
+margin_top = -50.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="SinglePullButton" type="Button" parent="Controls"]
+text = "Pull x1"
+
+[node name="TenPullButton" type="Button" parent="Controls"]
+text = "Pull x10"
+
+[node name="ResultPanel" type="VBoxContainer" parent="."]
+anchor_left = 0.25
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -10.0
+margin_right = -10.0
+margin_bottom = -10.0
+visible = false
+
+[node name="ResultLabel" type="RichTextLabel" parent="ResultPanel"]
+text = "Results will appear here"
